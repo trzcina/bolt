@@ -1238,7 +1238,7 @@ class Storage
         } elseif (preg_match('#^/?([a-z0-9_(\),-]+)/search(/([0-9]+))?$#i', $textquery, $match)) {
             // like 'page/search or '(entry,page)/search'
             $decoded['contenttypes'] = $this->decodeContentTypesFromText($match[1]);
-            $metaParameters['order'] = [$this, 'compareSearchWeights'];
+            $metaParameters['order'] = 'compareSearchWeights';
             if (count($match) >= 3) {
                 $metaParameters['limit'] = $match[3];
             }
